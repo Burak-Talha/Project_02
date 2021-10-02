@@ -12,6 +12,6 @@ In here we are developing software for the [yazilimcin.com](https://yazilimcin.c
 - Sweepstakes can do in this system
 
 ## Who are developing this system ?
-[Anıl](https://github.com/anilalanofc)
-[Burak Talha](https://github.com/Burak-Talha)
-[Hüseyin](https://github.com/Huseyinoney)
+[Anıl](https://github.com/anilalanofc)  
+[Burak Talha](https://github.com/Burak-Talha)  
+[Hüseyin](https://github.com/Huseyinoney)  
