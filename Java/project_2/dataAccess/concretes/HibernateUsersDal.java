@@ -53,12 +53,13 @@ public class HibernateUsersDal implements UsersDal {
 		Users userToDelete = session.get(Users.class, user.getId());
 		session.delete(userToDelete);
 	}
-
+	
 	@Override
-	public Users getById(int id) {
+	public String getByUserId(int id) {
 		Session session = entityManager.unwrap(Session.class);
 		Users user = session.get(Users.class, id);
-		return user;
+		return user.getUserName();
 	}
+
 
 }
