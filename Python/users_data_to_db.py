@@ -1,6 +1,8 @@
+
 import mysql.connector
-from mysql.connector import Error
+from mysql.connector import Error, connect
 from mysql.connector import connection
+import time
 
 # This code can upload any data to mySQL database
 
@@ -38,22 +40,25 @@ class mySQL_client:
     def unconnect_from_database(self):
             connection.close()
 
-    def add_user(self):
+    def add_user(self, users_discord_id, user_name, size):
 
         connection1 = self.connect_to_database()
         mycursor = connection1.cursor()
-        x = input("Enter you name :")
-        try:
-            #Execute SQL Query to insert record  
-            mycursor.execute("insert into users (username) values ('"+x+"')")  
-            connection1.commit() # Commit is used for your changes in the database  
-            print('Record inserted successfully...')  
-        except:
-            # rollback used for if any error   
-            connection1.rollback()  
-            connection1.close()#Connection Close
-        finally:
-            connection1.close()
+
+        for i in range(0,size): 
+                #Execute SQL Query to insert record 
+                print(users_discord_id[i]) 
+                print(user_name[i])
+                sql_query = "INSERT INTO project_2.users (username, discord_id, password) VALUES (%s, %s, %s)"
+                datas = (user_name[i], users_discord_id[i],'null')
+                mycursor.execute(sql_query,datas)
+                print("Hello")
+                connection1.commit() # Commit is used for your changes in the database  
+                print('Record inserted successfully...')  
+
+        connection1.close()
+        print("Connection closed")
+                
     
     def update_user(self):
 
@@ -88,16 +93,6 @@ class mySQL_client:
             connection1.close()#Connection Close
         finally:
             connection1.close()
-
-
-
-
-project_02 = mySQL_client("host:YOUR_HOST", "database:YOUR_DATABASE_NAME", "username:YOUR_USER_NAME", "password:YOUR_PASSWORD")
-
-
-
-project_02.add_user()
-
 
                 
 

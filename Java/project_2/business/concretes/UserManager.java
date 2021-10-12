@@ -2,17 +2,18 @@ package com.project_2.project_2.business.concretes;
 
 import java.util.List;
 
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project_2.project_2.business.abstracts.UserService;
+import com.project_2.project_2.business.abstracts.UsersService;
 import com.project_2.project_2.dataAccess.abstracts.UsersDal;
 import com.project_2.project_2.entities.concretes.Users;
 
 @Service
-public class UserManager implements UserService {
+public class UserManager implements UsersService {
 
 	// The business code writing in here
 	
@@ -31,8 +32,9 @@ public class UserManager implements UserService {
 
 	@Override
 	@Transactional
-	public Users getById(int id) {
-		this.usersDal.getById(id);
+	public Users getByUserId(int id) {
+		// if-else statement
+		this.usersDal.getByUserId(id);
 		return null;
 	}
 

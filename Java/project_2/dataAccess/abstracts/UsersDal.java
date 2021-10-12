@@ -6,8 +6,9 @@ import com.project_2.project_2.entities.concretes.Users;
 public interface UsersDal {
 
 	List<Users> getAll();
-	Users getById(int id);
+	String getByUserId(int id);
 	void create(Users user);
 	void update(Users user);
 	void delete(Users user);
+	
 }
