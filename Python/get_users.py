@@ -7,7 +7,7 @@ from users_data_to_db import mySQL_client
 
 
       
-bot = discum.Client(token="ODgwODgzMDMxNzQzODA3NTI4.YT-T1g.9XOpjj1rRSPbWLDXnrFDWEeS778")
+bot = discum.Client(token="*****")
 
 def close_after_fetching(resp, guild_id):
     if bot.gateway.finishedMemberFetching(guild_id):
