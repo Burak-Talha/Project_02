@@ -24,7 +24,7 @@ public class SubjectOptions {
 	private int id;
 	
 	@Column(name="id_subject")
-	private int usersId;
+	private int subjectId;
 	
 	@Column(name="subject_option")
 	private String subjectOptions;

@@ -29,7 +29,7 @@ public class HibernateSubjectOptionsDal implements SubjectOptionsDal{
 	@Transactional
 	public List<SubjectOptions> getAllSubject() {
 		Session session = entityManager.unwrap(Session.class);
-		String query = "from Subjectoptions";
+		String query = "from SubjectOptions";
 		List<SubjectOptions> subjectOptions = session.createQuery(query, SubjectOptions.class).list();
 		return subjectOptions;
 	}

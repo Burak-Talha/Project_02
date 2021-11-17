@@ -24,11 +24,13 @@ public class UserController {
 		this.userService = userService;
 	}
 	
+	// Working 16/11/21
 	@GetMapping("getall")
 	public List<Users> getAll(){
 		return userService.getAll();
 	}
 	
+	// Working 16/11/21
 	@PostMapping("add")
 	public void create(@RequestBody Users user){
 		userService.create(user);

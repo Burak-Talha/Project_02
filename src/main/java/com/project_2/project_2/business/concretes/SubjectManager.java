@@ -30,7 +30,7 @@ public class SubjectManager implements SubjectService{
 	@Override
 	@Transactional
 	public void create(Subject subject) {
-		if(subject.getSubjectName().length() >= 2 && subject.getSubjectName().length() >= 45) {
+		if(subject.getSubjectName().length() >= 2 && subject.getSubjectName().length() <= 45) {
 		this.subjectDal.create(subject);
 		}
 		else {

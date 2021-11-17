@@ -26,11 +26,13 @@ public class SubjectController {
 		this.subjectService = subjectService;
 	}
 	
+	// Working 16/11/21
 	@GetMapping("getall")
 	public List<Subject> getAllSubject(){
 		return subjectService.getAllSubject();
 	}
 	
+	// Working 16/11/21
 	@PostMapping("add")
 	public void create(@RequestBody Subject subject){
 		subjectService.create(subject);

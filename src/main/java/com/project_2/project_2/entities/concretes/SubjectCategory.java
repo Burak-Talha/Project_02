@@ -20,7 +20,6 @@ import lombok.NoArgsConstructor;
 @Table(name="subjectcategory")
 public class SubjectCategory implements Category {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	

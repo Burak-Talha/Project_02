@@ -18,8 +18,7 @@ public class SubjectOptionsManager implements SubjectOptionsService{
     }
     @Override
 	public List<SubjectOptions> getAllSubject() {
-		this.subjectOptionsDal.getAllSubject();
-		return null;
+		return this.subjectOptionsDal.getAllSubject();
 	}
 
 	@Override
@@ -30,7 +29,7 @@ public class SubjectOptionsManager implements SubjectOptionsService{
 
 	@Override
 	public void create(SubjectOptions subjectOptions) {
-		if (subjectOptions.getSubjectOptions().length() >= 1 && subjectOptions.getSubjectOptions().length() >= 25) {
+		if (subjectOptions.getSubjectOptions().length() >= 1 && subjectOptions.getSubjectOptions().length() <= 25) {
 		this.subjectOptionsDal.create(subjectOptions);
 		}
 		else {

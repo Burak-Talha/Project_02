@@ -25,7 +25,7 @@ public class HibernateSubjectCategoryDal implements CategoryDal<SubjectCategory>
 	@Transactional
 	public List<SubjectCategory> getAll() {
 		Session session = entityManager.unwrap(Session.class);
-		String query = "from subjectcategory";
+		String query = "from SubjectCategory";
 		List<SubjectCategory> category = session.createQuery(query, SubjectCategory.class).list();
 		return category;
 	}
