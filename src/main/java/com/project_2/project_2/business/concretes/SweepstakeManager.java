@@ -41,4 +41,11 @@ public class SweepstakeManager implements SweepstakeService{
 		sweepstakeDal.delete(Sweepstake);
 	}
 
+	@Override
+	public Sweepstake getById(int id) {
+		return sweepstakeDal.getById(id);
+	}
+	
+	
+
 }

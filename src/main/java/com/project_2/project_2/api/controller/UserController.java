@@ -36,16 +36,19 @@ public class UserController {
 		userService.create(user);
 	}
 	
+	// Working 18/11/21
 	@PostMapping("update")
 	public void update(@RequestBody Users user){
 		userService.update(user);
 	}
 	
+	// Working 18/11/21
 	@PostMapping("delete")
 	public void delete(@RequestBody Users user) {
 		userService.delete(user);
 	}
 	
+	// Working 18/11/21
 	@GetMapping("users/{id}")
 	public Users getById(@PathVariable int id){
 	return userService.getByUserId(id);

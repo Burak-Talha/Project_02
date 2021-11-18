@@ -38,11 +38,12 @@ public class SubjectController {
 		subjectService.create(subject);
 	}
 	
+	// Working 18/11/21
 	@PostMapping("update")
 	public void update(@RequestBody Subject subject){
 		subjectService.update(subject);
 	}
-	
+	// Working 18/11/21
 	@GetMapping("get_subject/{id}")
 	public String getSubjectById(@PathVariable int id){
 	return subjectService.getSubjectById(id);

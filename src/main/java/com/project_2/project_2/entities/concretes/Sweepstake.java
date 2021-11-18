@@ -32,4 +32,7 @@ public class Sweepstake {
 	
 	@Column(name="price")
 	private String price;
+	
+	@Column(name="lucky_number")
+	private int luckyNumber;
 }

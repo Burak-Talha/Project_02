@@ -34,15 +34,19 @@ public class SubjectCategoryController {
 	public void create(@RequestBody SubjectCategory subjectCategory) {
 		categoryService.create(subjectCategory);
 	}
+	
+	// Working 18/11/21
 	@GetMapping("update")
 	public void update(@RequestBody SubjectCategory subjectCategory) {
 		categoryService.update(subjectCategory);
 	}
-	
+	// Working 18/11/21
 	@GetMapping("delete")
 	public void delete(@RequestBody SubjectCategory subjectCategory) {
 		categoryService.delete(subjectCategory);
 	}
+	
+	// Working 18/11/21
 	@GetMapping("getCategoryById")
 	public String getCategoryById(@PathVariable int id) {
 		return categoryService.getCategoryById(id);

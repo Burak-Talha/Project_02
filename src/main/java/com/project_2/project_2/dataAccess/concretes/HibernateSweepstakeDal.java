@@ -1,4 +1,4 @@
-package com.project_2.project_2.dataAccess.concretes;
+ package com.project_2.project_2.dataAccess.concretes;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -8,16 +8,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.project_2.project_2.dataAccess.abstracts.SweepstakeDal;
 import com.project_2.project_2.entities.concretes.Sweepstake;
-
+import java.util.Random;
 @Repository
 public class HibernateSweepstakeDal implements SweepstakeDal{
 
-private EntityManager entityManager;
+	private EntityManager entityManager;
+	private HibernateUsersDal usersDal;
 	
 	@Autowired
-	public HibernateSweepstakeDal(EntityManager entityManager) {
+	public HibernateSweepstakeDal(EntityManager entityManager, HibernateUsersDal usersDal) {
 		this.entityManager = entityManager;
+		this.usersDal = usersDal;
 	}
+
+	private int random;
+	private Random rand = new Random();
 	
 	@Override
 	@Transactional
@@ -27,11 +32,14 @@ private EntityManager entityManager;
 		List<Sweepstake> Sweepstake = session.createQuery(query, Sweepstake.class).list();
 		return Sweepstake;
 	}
-
+	// sessionları tek bir yerde topla
 	@Override
 	@Transactional
 	public void create(Sweepstake Sweepstake) {
 		Session session = entityManager.unwrap(Session.class);
+		int maxValue = usersDal.count();
+		random = rand.nextInt()*maxValue;
+		Sweepstake.setLuckyNumber(random);
 		session.saveOrUpdate(Sweepstake);
 	}
 

@@ -33,17 +33,17 @@ public class SubjectOptionsController {
 	public void create(@RequestBody SubjectOptions subjectOptions){
 		subjectOptionsService.create(subjectOptions);
 	}
-	
+	// Working 18/11/21
 	@PostMapping("update")
 	public void update(@RequestBody SubjectOptions subjectOptions){
 		subjectOptionsService.update(subjectOptions);
 	}
-	
+	// Working 18/11/21
 	@PostMapping("delete")
 	public void delete(@RequestBody SubjectOptions subjectOptions) {
 		subjectOptionsService.delete(subjectOptions);
 	}
-	
+	// Working 18/11/21
 	@GetMapping("subject_options/{id}")
 	public SubjectOptions getById(@PathVariable int id){
 	return subjectOptionsService.getSubjectOptionsById(id);

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -60,6 +61,30 @@ public class HibernateUsersDal implements UsersDal {
 		Users user = session.get(Users.class, id);
 		return user.getUserName();
 	}
+	
+	// Count için count() fonksiyonunu yazmak gerekiyor.
+	@Override
+	public int count() {
+		Session session = entityManager.unwrap(Session.class);
+		Query<Users> numberOfPerson = session.createQuery("select count(users) from users", Users.class);
+		Integer numberOfPerson0 = numberOfPerson.getFetchSize();
+		return numberOfPerson0;
+	}
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
