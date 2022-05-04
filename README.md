@@ -6,7 +6,7 @@
 Hi everyone,
 In here we are developing software for the [yazilimcin.com](https://yazilimcin.com) community.
 
-## REQUİREMENTS
+## REQUIREMENTS
 - The users can login in this system with discord
 - The users can vote any subject
 - Sweepstakes can do in this system
